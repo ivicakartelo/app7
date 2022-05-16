@@ -9,7 +9,6 @@ function BlogpostsMenu({ blogposts }) {
     {blogposts.map((post) => 
         <Link key={post.id} to={`/${post.id}`}>
             <h3>{post.heading}</h3>
-            <p>{post.blogpost[0].substring(0, 150)}...</p>
         </Link>
     )}
     </>
@@ -18,13 +17,12 @@ function BlogpostsMenu({ blogposts }) {
 function BlogPost({ match }) {
     const id = match.params.id;
     const blogpost = blogpostsData.find(post => post.id === id);
-    const otherBlogposts = blogpostsData.filter(post => post.id !== id);
+    //const otherBlogposts = blogpostsData.filter(post => post.id !== id);
 
     return (
         <>
             <div class="grid_2">
-                <h3>Other blogposts:</h3>
-                <BlogpostsMenu blogposts={otherBlogposts} />
+                <BlogpostsMenu blogposts={blogpostsData} />
             </div>
             
             <div class="grid_4 last">

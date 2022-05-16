@@ -9,7 +9,7 @@ function App() {
         <div class="App">
           <div class="container">         
             <div class="grid_4">
-              <h3><Link to="/">TBEducation</Link></h3>
+              <h3><Link to="/">Home</Link></h3>
             </div>
             <div class="grid_2 last">
             	<p>Technology Business Education</p>
