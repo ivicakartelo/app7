@@ -1,17 +1,28 @@
 import React from 'react';
 import blogpostsData from './blogposts-data';
 import { Link } from 'react-router-dom';
-
+import { Card, CardText, CardTitle } from 'reactstrap';
 
 function BlogpostsMenu({ blogposts }) {
     return (
     <>
     {blogposts.map((post) => 
-        <Link key={post.id} to={`/${post.id}`}>
-            <h3>{post.heading}</h3>
-            <img src={post.image} />
-            <p>{post.blogpost[0].substring(0, 150)}...</p>
-        </Link>
+    <Link key={post.id} to={`/${post.id}`}>
+        <img src={post.image} />
+        <Card
+        body
+        color="primary"
+        outline
+        >   
+            <CardTitle tag="h5">
+            {post.heading}
+            </CardTitle>
+            
+            <CardText>
+            {post.blogpost[0].substring(0, 150)}...
+            </CardText>   
+        </Card>
+    </Link>
     )}
     </>
     );   

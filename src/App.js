@@ -2,19 +2,19 @@ import './App.css';
 import HomePage from './components/HomePage';
 import BlogPost from './components/BlogPost';
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
-
+import { Navbar, NavbarBrand } from 'reactstrap';
 function App() {
   return (
     <Router>
         <div class="App">
-          <div class="container">         
-            <div class="grid_4">
-              <h3><Link to="/">Home</Link></h3>
-            </div>
-            <div class="grid_2 last">
-            	<p>Technology Business Education</p>
-			      </div>
 
+        <Navbar dark color="primary">
+          <div class="container">
+        <NavbarBrand href="/">Technology Business Education</NavbarBrand>
+          </div>
+        </Navbar>
+
+          <div class="container">         
           <Switch>
             <Route path="/" component={HomePage} exact />           
             <Route path="/:id" component={BlogPost} />
@@ -23,7 +23,8 @@ function App() {
             <div class="grid_6">
 				      <p>&copy; TBEducation</p>
 			      </div>
-          </div>          
+          </div> 
+                   
         </div>       
       </Router>
   );
