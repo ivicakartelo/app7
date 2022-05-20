@@ -17,7 +17,7 @@ function BlogpostsMenu({ blogposts }) {
         /> 
         <CardImgOverlay>
             <Link to={`/${post.id}`}>
-            <CardTitle tag="h1">
+            <CardTitle tag="h5">
                 {post.heading}
             </CardTitle>
             </Link>
