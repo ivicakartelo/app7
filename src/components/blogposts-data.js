@@ -24,7 +24,7 @@ const blogposts = [
         ]
     },    {
         id: '2',
-        heading: 'How to Build a React Blog App in 10 Minutes',
+        heading: 'How to Build a React Blog App?',
         image: 'assets/images/2.jpg',
         blogpost: [
             `Vel eleifend ex egestas. Sed in turpis leo. Aliquam malesuada in massa tincidunt egestas. Nam consectetur varius turpis, 
@@ -67,8 +67,7 @@ const blogposts = [
             interdum, nibh elit congue tellus, ac vulputate urna lorem nec nisi. Morbi id 
             consequat quam. Vivamus accumsan dui in facilisis aliquet.`,
         ]
-    }, 
-     
+    },    
 ];
 
 export default blogposts;
