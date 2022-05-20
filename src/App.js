@@ -10,7 +10,7 @@ function App() {
 
         <Navbar dark color="primary">
           <div class="container">
-        <NavbarBrand href="/">Technology Business Education</NavbarBrand>
+            <NavbarBrand href="/">Technology Business Education</NavbarBrand>
           </div>
         </Navbar>
 
@@ -23,8 +23,7 @@ function App() {
             <div class="grid_6">
 				      <p>&copy; TBEducation</p>
 			      </div>
-          </div> 
-                   
+          </div>         
         </div>       
       </Router>
   );

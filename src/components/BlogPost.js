@@ -1,16 +1,20 @@
 import React from 'react';
 import blogpostsData from './blogposts-data';
-import { Link } from 'react-router-dom';
+//import { Link } from 'react-router-dom';
+import { Card, CardText, CardTitle, Nav, NavItem, NavLink } from 'reactstrap';
 
 
-function BlogpostsMenu({ blogposts }) {
+function BlogpostsMenuLeft({ blogposts }) {
     return (
     <>
-    {blogposts.map((post) => 
-        <Link key={post.id} to={`/${post.id}`}>
-            <h3>{post.heading}</h3>
-        </Link>
-    )}
+    <Nav vertical>
+    {blogposts.map((post) =>  
+        <NavItem>
+            <NavLink key={post.id}  href={`/${post.id}`}>
+                {post.heading}
+            </NavLink>
+        </NavItem>      
+    )}</Nav>
     </>
     );   
 }
@@ -21,19 +25,33 @@ function BlogPost({ match }) {
 
     return (
         <>
-            <div class="grid_2">
-                <BlogpostsMenu blogposts={blogpostsData} />
-            </div>
-            
-            <div class="grid_4 last">
-                    <h1>{blogpost.heading}</h1>
-                    <img src={blogpost.image} />
-                    {blogpost.blogpost.map((paragraph, key) => (
-                        <p key={key}>{paragraph}</p>
+        <div class="grid_2">
+            <BlogpostsMenuLeft blogposts={blogpostsData} />
+        </div>
+        
+        <div class="grid_4 last">
+        <Card
+            body
+            color=""
+            outline
+        >
+            <CardTitle tag="h1">
+                {blogpost.heading}
+            </CardTitle>
+            <img src={blogpost.image} />
+        </Card>        
+        <Card
+            body
+            color=""
+            outline
+        >
+        {blogpost.blogpost.map((paragraph, key) => (
+            <CardText>
+                <p key={key}>{paragraph}</p>
+            </CardText>
             ))}
+        </Card>
             </div>
-            
-            
         </>
     );		
 }

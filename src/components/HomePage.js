@@ -1,28 +1,30 @@
 import React from 'react';
 import blogpostsData from './blogposts-data';
 import { Link } from 'react-router-dom';
-import { Card, CardText, CardTitle } from 'reactstrap';
+import { Card, CardText, CardTitle, Nav, NavItem, NavLink } from 'reactstrap';
 
 function BlogpostsMenu({ blogposts }) {
     return (
     <>
     {blogposts.map((post) => 
-    <Link key={post.id} to={`/${post.id}`}>
-        <img src={post.image} />
+    <div key={post.id}>
+        
         <Card
         body
-        color="primary"
+        color=""
         outline
-        >   
-            <CardTitle tag="h5">
+        >  
+        <Link to={`/${post.id}`}>
+        <CardTitle tag="h1">
             {post.heading}
-            </CardTitle>
-            
+        </CardTitle>
+        </Link>
+        <img src={post.image} />
             <CardText>
-            {post.blogpost[0].substring(0, 150)}...
+                {post.blogpost[0].substring(0, 150)}...
             </CardText>   
         </Card>
-    </Link>
+    </div>
     )}
     </>
     );   
@@ -31,11 +33,14 @@ function BlogpostsMenu({ blogposts }) {
 function BlogpostsMenuLeft({ blogposts }) {
     return (
     <>
-    {blogposts.map((post) => 
-        <Link key={post.id} to={`/${post.id}`}>
-            <h3>{post.heading}</h3>
-        </Link>
-    )}
+    <Nav vertical>
+    {blogposts.map((post) =>  
+        <NavItem>
+            <NavLink key={post.id}  href={`/${post.id}`}>
+                {post.heading}
+            </NavLink>
+        </NavItem>      
+    )}</Nav>
     </>
     );   
 }
