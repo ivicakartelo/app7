@@ -1,7 +1,7 @@
 import React from 'react';
 import blogpostsData from './blogposts-data';
 //import { Link } from 'react-router-dom';
-import { Card, CardText, CardTitle, Nav, NavItem, NavLink } from 'reactstrap';
+import { Card, CardText, CardTitle, Nav, NavItem, NavLink, CardImg } from 'reactstrap';
 
 
 function BlogpostsMenuLeft({ blogposts }) {
@@ -25,11 +25,11 @@ function BlogPost({ match }) {
 
     return (
         <>
-        <div class="grid_2">
+        <div class="grid4">
             <BlogpostsMenuLeft blogposts={blogpostsData} />
         </div>
         
-        <div class="grid_4 last">
+        <div class="grid8">
         <Card
             body
             color=""
@@ -38,7 +38,11 @@ function BlogPost({ match }) {
             <CardTitle tag="h1">
                 {blogpost.heading}
             </CardTitle>
-            <img src={blogpost.image} />
+            <CardImg
+        alt="Card image cap"
+        src={blogpost.image}
+        width="100%"
+        />
         </Card>        
         <Card
             body
@@ -46,8 +50,8 @@ function BlogPost({ match }) {
             outline
         >
         {blogpost.blogpost.map((paragraph, key) => (
-            <CardText>
-                <p key={key}>{paragraph}</p>
+            <CardText key={key}>
+                {paragraph}
             </CardText>
             ))}
         </Card>

@@ -20,7 +20,7 @@ function App() {
             <Route path="/:id" component={BlogPost} />
           </Switch> 
 
-            <div class="grid_6">
+            <div class="grid12">
 				      <p>&copy; TBEducation</p>
 			      </div>
           </div>         

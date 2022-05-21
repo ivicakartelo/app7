@@ -8,8 +8,8 @@ function BlogpostsMenu({ blogposts }) {
     return (
     <>
     {blogposts.map((post) => 
-    <div key={post.id}>     
-    <Card inverse>
+    <div className="grid4">
+        <Card key={post.id} inverse>
         <CardImg
         alt="Card image cap"
         src={post.image}
@@ -31,12 +31,14 @@ function BlogpostsMenu({ blogposts }) {
             </CardText>
         </CardImgOverlay>   
     </Card>
-    </div>
+    </div>   
+    
+    
     )}
     </>
     );   
 }
-
+/*
 function BlogpostsMenuLeft({ blogposts }) {
     return (
     <>
@@ -51,16 +53,11 @@ function BlogpostsMenuLeft({ blogposts }) {
     </>
     );   
 }
-
+*/
 function HomePage() {
     return (
         <>     
-        <div class="grid_2">
-            <BlogpostsMenuLeft blogposts={blogpostsData} />
-        </div> 
-        <div class="grid_4 last">
-            <BlogpostsMenu blogposts={blogpostsData} />
-        </div>  
+            <BlogpostsMenu blogposts={blogpostsData} /> 
     </> 
     );
 }
